@@ -1,0 +1,11 @@
+{
+  "name": "Okra-MissionSubsystem",
+  "version": "1.0.0",
+  "description": "This is the web package that will implement the Okra mission subsystem. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maria Alicia de Andres Herrero",
+  "license": "ISC"
+}

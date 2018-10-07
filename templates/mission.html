@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="mainSection">
+    <div class="container">
+      <div class="jumbotron">
+          <div class="container">
+            <h1>Get your mission!!</h1>
+            <p> Let's be happier than ever...</p>
+            <p><a class="btn btn-success btn-lg" href="{{url_for('missionstart')}}">Download app</a></p>
+          </div>
+      </div>
+      <article>
+      <div class="container">
+      <div class='row'>
+        <div class='col-md-4 bg-faded col-md-offset-2'>
+          <h1>Change your eating habits</h1>
+          <a href="#" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+          <hr>
+        </div>
+        <div class='col-md-4 bg-faded col-md-offset-2'>
+          <h1>Change your fashion style</h1>
+          <a href="#" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+          <hr>
+        </div>
+        <div class='col-md-4 bg-faded col-md-offset-2'>
+          <h1>Change your hobbies</h1>
+          <a href="#" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+          <hr>
+        </div>
+      </div> <!--row0-->
+      </div>
+      </article>
+      <article>
+      <div class="bg-faded p-4 my-4">
+        <hr>
+        <div class="box1">
+            <ul class="nav-pills text-expanded" id="brandIcons">
+                <li class="">
+                   <i style="font-size:36px" class="fa">&#xf173;</i>
+                </li>
+                 <li class="">
+                    <i class="fa fa-twitter" style="font-size:36px"></i>
+                </li>
+                <li class="">
+                    <i class="fa fa-facebook" style="font-size:36px"></i>
+                </li>
+                 <li class="">
+                    <i class="fa fa-youtube" style="font-size:36px"></i>
+                </li>
+                <li class="">
+                    <i class="fa fa-rss" style="font-size:36px"></i>
+                </li>
+            </ul>
+          </div>
+      </div>
+      </article>
+    </div> <!-- /.container -->
+</section>
+{% endblock %}
+

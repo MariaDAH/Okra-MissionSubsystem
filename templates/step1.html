@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="boxpanel bg-faded">
+  <hr class="divider">
+  <h2 class="text-center text-lg text-uppercase my-0">Changing food habits!
+    <strong>Getting ready</strong>
+  </h2>
+  <hr class="divider">
+  <form>
+    <div class="p-4 my-4">
+      <div>
+        <div class="form-group row text-left">
+            <label for="jobId" class="col-lg-4 col-form-label" align="right">Search job title</label>
+            <div class="col-lg-6">
+                 <select id="jobId" class="col-lg-12">
+                   <option>Administrative and clerigal</option>
+                   <option>Alternative therapies</option>
+                   <option>Animals, plants and land</option>
+                 </select>
+            </div>
+            <!--<div class="dropdown col-lg-6">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Category
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Beverages</a></li>
+                <li><a href="#">Fabrics</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>-->
+         </div>
+         <div class="form-group row text-left">
+            <label for="medicalConditionId" class="col-lg-4 col-form-label" align="right">Select known medical conditions</label>
+            <div class="col-lg-6">
+                 <select id="medicalConditionId" class="col-lg-12">
+                   <option>Alcohol abuse and alcoholism</option>
+                   <option>Allergies</option>
+                   <option>Alopecia areata</option>
+                 </select>
+            </div>
+            <!--<div class="dropdown col-lg-6">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Category
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Beverages</a></li>
+                <li><a href="#">Fabrics</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>-->
+         </div>
+          <br/>
+            <p align="center">     * In case you suffer more than one disease, please continue selecting.</p>
+          <div class="form-group row text-left">
+            <label for="location" class="col-lg-4 col-form-label" align="right">Height</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control" id="location" placeholder="Enter your height here" autofocus="">
+            </div>
+          </div>
+          <div class="form-group row text-left">
+            <label for="weight" class="col-lg-4 col-form-label" align="right">Weight</label>
+            <div class="col-lg-6">
+            <input type="text" class="form-control" id="weight" placeholder="Enter your weight here" autofocus="">
+            </div>
+          </div>
+          <div class="form-group row text-left">
+            <label for="age" class="col-lg-4 col-form-label" align="right">Age</label>
+            <div class="col-lg-6">
+            <input type="text" class="form-control" id="age" placeholder="Enter your age here" autofocus="">
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="#"><u>Click to continue with assesment</u></a>
+          </div>
+        </div>
+     </div>
+  </form>
+</div>
+<br />
+{% endblock %}
