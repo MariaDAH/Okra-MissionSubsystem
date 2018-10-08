@@ -1,11 +1,11 @@
 # Welcome to Okra mission subsystem.
 
-##Overview
-This is the Okra mission subsystem that will implement the quiz an user should answer to get information about his/her instakes the last 24 hours and their nutricional values.
+## Overview
+This is the Okra mission subsystem that will implement the quiz an user must answer to get information about his/her instakes the last 24 hours and their nutricional values.
 Also it will display information about how user consumption is affecting the global market.
 
 
-##Installation
+## Installation
 ```
 Initialize web package.
 >npm init
@@ -28,7 +28,7 @@ git repository:
 keywords:
 author: Maria Alicia de Andres Herrero
 license: (ISC)
-About to write to C:\Users\mixid\Documents\Okra-MissionSubsystem\package.json:
+About to write to Okra-MissionSubsystem\package.json:
 
 {
   "name": "Okra-MissionSubsystem",
@@ -48,7 +48,7 @@ Is this ok? (yes) yes
 If not previously installed in your machine. Install python, pip, and flask microframework.
 
 
-## Run in develop
+## Run in development
 
 + set FLASK_APP=run.py
 + set FLASK_ENV=development
