@@ -207,7 +207,6 @@ $('.video-btn').click(function() {
 console.log($videoSrc);
 
 
-
 // when the modal is opened autoplay it
 $('#myModal').on('shown.bs.modal', function (e) {
 

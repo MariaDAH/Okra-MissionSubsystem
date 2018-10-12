@@ -21,6 +21,12 @@ def missionstart():
 def step1():
   return render_template("step1.html", page_title="Getting ready")
 
+
+@app.route('/fooddiary')
+def fooddiary():
+  return render_template("fooddiary.html", page_title="Food diary")
+
+
 if __name__=='__main__':
   app.run(host=os.getenv('IP'),port=int(os.getenv('PORT')), debug = True)
 

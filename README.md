@@ -12,7 +12,7 @@ The idea behind this software product is creating a web application which will s
      - Sustainable approach to minimize environmental impact.
   * To provide information such as:
      - Environmental, Social and Governance Key Performance Indicators for investors.
-  * To become a ***goblal collaboration site*** in benefit of the evolution, **"The tomorrow".**
+  * To become a ***goblal collaboration site*** educating people to behave in benefit of the evolution, **"The tomorrow".**
 
 Include (User stories and Mockups and diagrams)
 
@@ -31,9 +31,9 @@ Include (User stories and Mockups and diagrams)
 
     Feature 1.4: User X can delete any entry (food) previously inserted from the pre-filled food diary form. System will delete the food from the food diary.
 
-    Feature 1.5: User X selects seeing situation of the local market. System  will respond showing bubble chart with information about brands consumed in the local area, clasified by conglomerates if possible. (Dimension: region) (Metrics: Brand Name, Conglomerate).
+    Feature 1.5: User X selects seeing situation of the local market. System  will respond showing bubble chart with information about brands consumed in the local area, clasified by conglomerates if possible. (Dimension: region, Brand Name, Conglomerate) (Metrics: Number of products).
 
-    Feature 1.6: User X selects seeing situation of the global market. System  will respond showing bubble chart with information about brands consumed globally, clasified by conglomerates if possible. (Dimension: country) (Metrics: Brand Name, Conglomerate).
+    Feature 1.6: User X selects seeing situation of the global market. System  will respond showing bubble chart with information about brands consumed globally, clasified by conglomerates if possible. (Dimension: country, Brand Name, Conglomerate) (Metrics: Number of products).
 
     For features 1.2 to 1.4 it has been used FastSecret Platform REST API, to get nutricional values. ** http://platform.fatsecret.com **
 
@@ -186,6 +186,8 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 
 ## Run in development
+
+ Use of Flask microframework as development runtime environment.
 
 + set FLASK_APP=run.py
 + set FLASK_ENV=development
