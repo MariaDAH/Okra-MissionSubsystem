@@ -522,6 +522,21 @@ hr.divider {
   *border-right-color: #ffffff;
 }
 
+.table-container{
+  margin: 3%;
+}
+
+div#search-bar {
+  margin-top:2%;
+  margin-right: 2%;
+}
+
+#search-control{
+  display: inline-block;
+  position: relative;
+  width: 90%;
+}
+
 
 @media screen and (min-width: 480px) {
 

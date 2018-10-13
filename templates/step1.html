@@ -13,9 +13,9 @@
             <label for="jobId" class="col-lg-4 col-form-label" align="right">Search job title</label>
             <div class="col-lg-6">
                  <select id="jobId" class="col-lg-12">
-                   <option>Administrative and clerigal</option>
-                   <option>Alternative therapies</option>
-                   <option>Animals, plants and land</option>
+                  {% for jobtitle in job_titles %}
+                  <option>{{ jobtitle }}</option>
+                  {% endfor %}
                  </select>
             </div>
             <!--<div class="dropdown col-lg-6">
@@ -36,9 +36,9 @@
             <label for="medicalConditionId" class="col-lg-4 col-form-label" align="right">Select known medical conditions</label>
             <div class="col-lg-6">
                  <select id="medicalConditionId" class="col-lg-12">
-                   <option>Alcohol abuse and alcoholism</option>
-                   <option>Allergies</option>
-                   <option>Alopecia areata</option>
+                    {% for medicalcon in medical_cons %}
+                    <option>{{ medicalcon }}</option>
+                    {% endfor %}
                  </select>
             </div>
             <!--<div class="dropdown col-lg-6">
