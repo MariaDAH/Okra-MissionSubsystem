@@ -64,6 +64,7 @@ def step1():
 
 @app.route('/fooddiary')
 def fooddiary():
+  return api.authenticate()
   return render_template("fooddiary.html", page_title="Food diary")
 
 
