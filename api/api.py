@@ -4,7 +4,9 @@ import requests
 from flask import Blueprint, request, jsonify, session, redirect, url_for
 from fatsecret import Fatsecret
 
-api = Blueprint('api', 'api', url_prefix='/api')
+
+api = Blueprint('api',__name__, template_folder="api")
+
 
 consumer_key = ''
 consumer_secret = ''
@@ -12,7 +14,7 @@ consumer_secret = ''
 fs = Fatsecret(consumer_key, consumer_secret)
 
 
-@api.route("/")
+@api.route("/api")
 def index():
     if request.args.get('oauth_verifier'):
 
@@ -24,10 +26,10 @@ def index():
         return redirect(url_for('profile'))
 
     else:
-        return "<a href={0}>Authenticate Access Here</a>".format(url_for('authenticate'))
+        return "<a href={0}>Authenticate Access Here</a>".format(url_for('api.authenticate'))
 
 
-@api.route("/auth")
+@api.route("/api/auth")
 def authenticate():
 
     auth_url = fs.get_authorize_url(callback_url="http://127.0.0.1:5000")
@@ -35,7 +37,7 @@ def authenticate():
     return redirect(auth_url)
 
 
-@api.route("/profile")
+@api.route("/api/profile")
 def profile():
     food = fs.foods_get_most_eaten()
 
@@ -47,7 +49,7 @@ def profile():
 #test0: items no found
 #test1: several items found
 #test3: error server response
-@api.route('/foods/options')
+#@api.route('/foods/options')
 def api_foods_options():
 
     all_options =  []

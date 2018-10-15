@@ -1,7 +1,7 @@
 import os
 import logging
 """import requests"""
-from flask import Flask, render_template, request, redirect, session, flash
+from flask import Flask, render_template, request, redirect, session, flash, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 app.logger.setLevel(logging.INFO)
 
-app.register_blueprint(api)
+app.register_blueprint(api,url_prefix="/api")
 
 
 def write_to_file(filename,data):
@@ -36,6 +36,7 @@ def get_all_medicalcons():
     with open("data/medicalcons.txt", "r") as medical_cons:
       medicalcons = medical_cons.readlines()
     return medicalcons
+
 
 
 @app.route('/')
@@ -64,9 +65,11 @@ def step1():
 
 @app.route('/fooddiary')
 def fooddiary():
-  return api.authenticate()
-  return render_template("fooddiary.html", page_title="Food diary")
-
+  #foods=[]
+  #foods = api.api_foods_options()
+  #return render_template("fooddiary.html", foods)
+  #return render_template("fooddiary.html", page_title="Food diary")
+  return redirect(url_for('api.authenticate'))
 
 if __name__=='__main__':
   app.run(host=os.getenv('IP'),port=int(os.getenv('PORT')), debug = True)
