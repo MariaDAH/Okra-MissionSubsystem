@@ -14,7 +14,7 @@ consumer_secret = ''
 fs = Fatsecret(consumer_key, consumer_secret)
 
 
-@api.route("/api")
+@api.route("/")
 def index():
     if request.args.get('oauth_verifier'):
 
@@ -29,7 +29,7 @@ def index():
         return "<a href={0}>Authenticate Access Here</a>".format(url_for('api.authenticate'))
 
 
-@api.route("/api/auth")
+@api.route("/auth")
 def authenticate():
 
     auth_url = fs.get_authorize_url(callback_url="http://127.0.0.1:5000")
@@ -37,7 +37,7 @@ def authenticate():
     return redirect(auth_url)
 
 
-@api.route("/api/profile")
+@api.route("/profile")
 def profile():
     food = fs.foods_get_most_eaten()
 
