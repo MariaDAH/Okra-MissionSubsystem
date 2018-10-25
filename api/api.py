@@ -8,8 +8,8 @@ from fatsecret import Fatsecret
 api = Blueprint('api',__name__, template_folder="api")
 
 
-consumer_key = '40ca6a9cd34648fd80be50827fe46f7d'
-consumer_secret = '68a259ab89e947d0b3248cd98a41d4eb'
+consumer_key = ''
+consumer_secret = ''
 
 fs = Fatsecret(consumer_key, consumer_secret)
 
