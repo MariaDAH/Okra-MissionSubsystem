@@ -1,9 +1,9 @@
 import os
 import logging
-"""import requests"""
+#import requests
 from flask import Flask, render_template, request, redirect, session, flash, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 
 # Blueprint module to integrate fastsecret api
 from api.api import api
@@ -38,23 +38,24 @@ def get_all_medicalcons():
     return medicalcons
 
 
-
 @app.route('/')
 def index():
-  if request.method == 'POST':
-    write_to_file("data/userlog.txt", request.form["usrid"] + "\n")
-    return redirect(url_for('missionstart'))
   return render_template("index.html", page_title="Index")
 
 
-@app.route('/mission')
+@app.route('/mission', methods=["GET","POST"])
 def mission():
-  return render_template("mission.html", page_title="Mission")
+  if request.method == "POST":
+    flash("Thanks {}, for sign in!".format(request.form))
+    return redirect(url_for('missionstart'))
+  else:
+    return render_template("mission.html", page_title="Mission")
 
 
 @app.route('/missionstart')
 def missionstart():
   return render_template("missionstart.html", page_title="Mission Start")
+
 
 @app.route('/step1')
 def step1():
@@ -70,6 +71,8 @@ def fooddiary():
   #return render_template("fooddiary.html", foods)
   #return render_template("fooddiary.html", page_title="Food diary")
   return redirect(url_for('api.authenticate'))
+
+
 
 if __name__=='__main__':
   app.run(host=os.getenv('IP'),port=int(os.getenv('PORT')), debug = True)

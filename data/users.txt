@@ -1,0 +1,5 @@
+user = [
+  { "username": "Maria", "email": "deandresherrero@gmail.com", "password": "mixina", "password2": "mixina" }
+  { "username": "Andres", "email": "deandresherrero@hotmail.com", "password": "mixina2", "password2": "mixina2" }
+
+]

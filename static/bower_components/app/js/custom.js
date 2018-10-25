@@ -223,11 +223,11 @@ $('document').ready(function(){
         $("#video").attr('src',$videoSrc);
     })
 
-    document.querySelector("#login-panel").addEventListener('click',function(event){
+    document.querySelector("#signup-panel").addEventListener('click',function(event){
 
-        $("#loginpnl").show();
+        $("#signuppnl").show();
         $("#mainSection").hide();
-        event.preventDefault();
+        //event.preventDefault();
 
     }, false)
 
