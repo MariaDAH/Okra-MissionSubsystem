@@ -65,29 +65,33 @@ def index():
 def mission():
 
   print("loading mission")
+
   form = ReusableForm(request.form)
+
   print("Form created",form)
   print("Form errros",form.errors)
   print("Form Request method",request.method)
 
-  if request.method == "POST":
+  if request.method == "POST" and form.validate():
 
 
-    firstname=request.form['firstname']
-    lastname=request.form['lastname']
-    email=request.form['email']
-    confiremail=request.form['confiremail']
-    username=request.form['username']
-    password=request.form['password']
+    firstname=form.firstname.data;
+    #firstname=request.form['firstname']
+    #lastname=request.form['lastname']
+    #email=request.form['email']
+    #confiremail=request.form['confiremail']
+    #username=request.form['username']
+    #password=request.form['password']
     #filename = secure_filename(form.file.data.filename)
     #form.file.data.save('data/uploads/' + filename)
 
-    print("Print something", username, " ", email, " ", password)
+    #print("Print something", firstname, " ", email, " ", password)
 
-    flash("Thanks" + username + " , for sign in!".format(request.form))
+    print(firstname);
+    #flash("Thanks" + firstname + " , for sign in!".format(request.form))
+    #flash('Thanks for registering')
 
-
-    return redirect(url_for('missionstart'), form=form)
+    return redirect(url_for('missionstart'))
     print("return mission start")
 
   else:
