@@ -26,7 +26,7 @@ def index():
         return redirect(url_for('profile'))
 
     else:
-        return "<a href={0}>Authenticate Access Here</a>".format(url_for('api.authenticate'))
+        return "<a href={0}>Authenticate Access Here</a>".format(url_for('auth'))
 
 
 @api.route("/auth")
