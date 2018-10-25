@@ -3,7 +3,9 @@ import logging
 #import requests
 from flask import Flask, render_template, request, redirect, session, flash, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField,FileField
+from werkzeug import secure_filename
+
 
 # Blueprint module to integrate fastsecret api
 from api.api import api
@@ -13,6 +15,22 @@ app = Flask(__name__)
 app.logger.setLevel(logging.INFO)
 
 app.register_blueprint(api,url_prefix="/api")
+
+
+class ReusableForm(Form):
+
+    firstname = TextField('First Name:')
+    lastname = TextField('Name:')
+    email = TextField('Email:')
+    confiremail = TextField('Email Confirmation:')
+    username = TextField('UserName:')
+    password= TextField('Password:')
+    #avatar=FileField('Avatar:')
+
+
+    def reset(self):
+        blankData = MultiDict([ ('csrf', self.reset_csrf() ) ])
+        self.process(blankData)
 
 
 def write_to_file(filename,data):
@@ -45,10 +63,36 @@ def index():
 
 @app.route('/mission', methods=["GET","POST"])
 def mission():
+
+  print("loading mission")
+  form = ReusableForm(request.form)
+  print("Form created",form)
+  print("Form errros",form.errors)
+  print("Form Request method",request.method)
+
   if request.method == "POST":
-    flash("Thanks {}, for sign in!".format(request.form))
-    return redirect(url_for('missionstart'))
+
+
+    firstname=request.form['firstname']
+    lastname=request.form['lastname']
+    email=request.form['email']
+    confiremail=request.form['confiremail']
+    username=request.form['username']
+    password=request.form['password']
+    #filename = secure_filename(form.file.data.filename)
+    #form.file.data.save('data/uploads/' + filename)
+
+    print("Print something", username, " ", email, " ", password)
+
+    flash("Thanks" + username + " , for sign in!".format(request.form))
+
+
+    return redirect(url_for('missionstart'), form=form)
+    print("return mission start")
+
   else:
+
+    print("render mission")
     return render_template("mission.html", page_title="Mission")
 
 
