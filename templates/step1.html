@@ -6,78 +6,57 @@
     <strong>Getting ready</strong>
   </h2>
   <hr class="divider">
-  <form>
+  <form action="" method="POST" role="form">
     <div class="p-4 my-4">
       <div>
         <div class="form-group row text-left">
             <label for="jobId" class="col-lg-4 col-form-label" align="right">Search job title</label>
             <div class="col-lg-6">
-                 <select id="jobId" class="col-lg-12">
+                 <select id="jobId" name="jobId" class="col-lg-12">
                   {% for jobtitle in job_titles %}
                   <option>{{ jobtitle }}</option>
                   {% endfor %}
                  </select>
             </div>
-            <!--<div class="dropdown col-lg-6">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Category
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Beverages</a></li>
-                <li><a href="#">Fabrics</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>-->
          </div>
          <div class="form-group row text-left">
             <label for="medicalConditionId" class="col-lg-4 col-form-label" align="right">Select known medical conditions</label>
             <div class="col-lg-6">
-                 <select id="medicalConditionId" class="col-lg-12">
+                 <select id="medicalConditionId" name="medicalConditionId" class="col-lg-12">
                     {% for medicalcon in medical_cons %}
                     <option>{{ medicalcon }}</option>
                     {% endfor %}
                  </select>
             </div>
-            <!--<div class="dropdown col-lg-6">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Category
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Beverages</a></li>
-                <li><a href="#">Fabrics</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>-->
          </div>
           <br/>
-            <p align="center">     * In case you suffer more than one disease, please continue selecting.</p>
+          <p align="center">     * In case you suffer more than one disease, please continue selecting.</p>
           <div class="form-group row text-left">
             <label for="location" class="col-lg-4 col-form-label" align="right">Height</label>
             <div class="col-lg-6">
-              <input type="text" class="form-control" id="location" placeholder="Enter your height here" autofocus="">
+              <input type="text" class="form-control" id="location" name="location" placeholder="Enter your height here" autofocus="" required="true" title="Please enter your height in centimeters">
             </div>
           </div>
           <div class="form-group row text-left">
             <label for="weight" class="col-lg-4 col-form-label" align="right">Weight</label>
             <div class="col-lg-6">
-            <input type="text" class="form-control" id="weight" placeholder="Enter your weight here" autofocus="">
+            <input type="text" class="form-control" id="weight" name="weight" placeholder="Enter your weight here" autofocus=""
+            required="true" title="Please enter your weight in kilograms">
             </div>
           </div>
           <div class="form-group row text-left">
             <label for="age" class="col-lg-4 col-form-label" align="right">Age</label>
             <div class="col-lg-6">
-            <input type="text" class="form-control" id="age" placeholder="Enter your age here" autofocus="">
+            <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age here" autofocus=""
+            required="true" title="Please enter your age in years">
             </div>
           </div>
-          <div class="text-center">
+           <div class="form-actions text-center">
+                <button type="submit" class="btn btn-default btn-lg">Continue</button>
+            </div>
+          <!--<div class="text-center">
             <a href="{{url_for('fooddiary')}}"><u>Click to continue with assesment</u></a>
-          </div>
+          </div>-->
         </div>
      </div>
   </form>

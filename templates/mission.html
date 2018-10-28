@@ -7,6 +7,7 @@
             <h1>Get your mission!!</h1>
             <p> Let's be happier than ever...</p>
             <p><a class="btn btn-success btn-lg" id="signup-panel" href="{{ url_for('.mission',_anchor='signuppnl') }}">Download app</a></p>
+            <div class="loader text-center" id="loaderDiv"></div><!--top-->
           </div>
       </div>
       <article>
@@ -14,17 +15,17 @@
       <div class='row'>
         <div class='col-md-4 bg-faded col-md-offset-2'>
           <h1>Change your eating habits</h1>
-          <a href="#" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+         <!--<a href="#" class=""><i class="fa fa-user"></i></a>-->
           <hr>
         </div>
         <div class='col-md-4 bg-faded col-md-offset-2'>
           <h1>Change your fashion style</h1>
-          <a href="#" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+          <!--<a href="#" class=""><i class="fa fa-user"></i></a>-->
           <hr>
         </div>
         <div class='col-md-4 bg-faded col-md-offset-2'>
           <h1>Change your hobbies</h1>
-          <a href="#" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+          <!--<a href="#" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>-->
           <hr>
         </div>
       </div> <!--row0-->
@@ -60,3 +61,4 @@
 {% block article %}
 {{ super() }}
 {% endblock %}
+
