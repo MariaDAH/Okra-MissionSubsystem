@@ -126,21 +126,23 @@
                 <div class="form-group row has-feedback">
                   <label for="firstname" class="control-label col-lg-2">First name:</label>
                   <div class="col-lg-10">
-                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter you first name here.">
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter you first name here." data-error="">
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group row has-feedback">
                   <label for="lastname" class="control-label col-lg-2">Last name:</label>
                   <div class="col-lg-10">
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name here.">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name here." data-error="">
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group row has has-feedback">
                   <label for="email" class="control-label col-lg-2" >Email:</label>
                   <div class="col-lg-10">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email here." data-error="Please verify this is a valid email address." required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email here." data-error="Please verify this is a valid email address." data-required-error="An email is required" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
                   <div class="help-block with-errors"></div>
@@ -148,7 +150,7 @@
                  <div class="form-group row has-feedback">
                   <label for="confirmemail" class="control-label col-lg-2">Confirm email:</label>
                   <div class="col-lg-10">
-                    <input type="email" class="form-control" id="confirmemail" name="confirmemail" placeholder="Confirm your email here." data-match="#email" data-error="Please verify this is a valid email address" data-match-error="Whoops, emails don't match" required>
+                    <input type="email" class="form-control" id="confirmemail" name="confirmemail" placeholder="Confirm your email here." data-match="#email" data-error="Please verify this is a valid email address" data-match-error="Whoops, emails don't match" data-required-error="An email is required"  required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
                   <div class="help-block with-errors"></div>
@@ -156,14 +158,15 @@
                 <div class="form-group row has-feedback">
                   <label for="userSname" class="control-label col-lg-2">Username:</label>
                   <div class="col-lg-10">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username here." required>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username here." data-error="" data-required-error="An username is required"  required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group row has-feedback">
                   <label for="passwd" class="control-label col-lg-2">Password:</label>
                   <div class="col-lg-10">
-                    <input type="password" class="form-control" id="passwd" name="passwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter your password here." data-error="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <input type="password" class="form-control" id="passwd" name="passwd" data-minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter your password here." data-pattern-error="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" data-required-error="A password is required" data-error="" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
                   <div class="help-block with-errors"></div>
@@ -171,7 +174,7 @@
                 <div class="form-group row has-feedback">
                   <label for="confpasswd" class="control-label col-lg-2">Confirm Password:</label>
                   <div class="col-lg-10">
-                    <input type="password" class="form-control" id="confpasswd" name="confpasswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm your password here." data-match="#password" data-match-error="Whoops, passwords don't match" data-error="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <input type="password" class="form-control" id="confpasswd" name="confpasswd"  placeholder="Confirm your password here." data-match="#password" data-match-error="Whoops, passwords don't match" data-required-error="Password is required" data-error="" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                   </div>
                   <div class="help-block with-errors"></div>
@@ -204,16 +207,23 @@
                         </div>
                       </div>
                       <div class="modal-body btn-group">
-                        <label for="filename" class="btn btn-default btn-file">Browse...
-                            <input type="file" for="filetext" accept=".jpg, .jpeg, .png" id="filename" name="filename">
+                        <!--<label for="filename" class="btn btn-default btn-file">Browse...
+                            <input type="file" name="filen" for="filetext"  id="file">
                         </label>
                         <input type="text" id="filetext">
                       </div>
-                      <span class="help-block">Please select one file</span>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" id="selectimg">Save changes</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <span class="help-block">Please select one file</span>-->
+                      <form methods="POST" name="uploadFileForm" enctype=multipart/form-data>
+                        <div>
+                          <input type=file name=file>
+                          <input type=submit value=Upload>
+                        </div>
+                        <form>
                       </div>
+                      <!--<div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="selectimg" value=Upload>Save changes</button>
+                        <input type=submit value=Upload>
+                      </div>-->
                     </div>
                   </div>
                 </div>

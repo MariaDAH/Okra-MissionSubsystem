@@ -21,7 +21,7 @@ $('document').ready(function(){
         $("#filetext").value=label;
     });
 
-    $('#selectimg').on('click', function(){
+    /*$('#selectimg').on('click', function(){
 
           var img=$('input:file').val();
           console.log(img);
@@ -33,7 +33,7 @@ $('document').ready(function(){
               var $body = $("<body>").text("Test");
               $body.insertAfter($doc);
           });
-    });
+    });*/
 
     $("#login").click(function(){
 
